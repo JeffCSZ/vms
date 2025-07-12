@@ -1,0 +1,262 @@
+/* Mobile-first design */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+    sans-serif;
+  background-color: #f8f9fa;
+}
+
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  width: 100vw; /* Full viewport width */
+  margin: 0;
+  background-color: white;
+  position: relative;
+}
+
+.content-container {
+  flex: 1;
+  padding-bottom: 140px; /* Extra space for bottom navigation */
+  overflow-y: auto;
+  width: 100vw; /* Full viewport width */
+  min-height: calc(100vh - 140px);
+}
+
+/* Bottom Navigation Styles */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100vw; /* Full viewport width */
+  background-color: white;
+  border-top: 1px solid #dee2e6;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.bottom-nav .nav-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px 4px;
+  color: #6c757d;
+  text-decoration: none;
+  font-size: 0.75rem;
+  transition: color 0.2s;
+  min-height: 60px;
+}
+
+.bottom-nav .nav-link.active {
+  color: #007bff;
+}
+
+.bottom-nav .nav-link:hover {
+  color: #007bff;
+}
+
+.bottom-nav .nav-icon {
+  font-size: 1.2rem;
+  margin-bottom: 2px;
+}
+
+/* Page Headers */
+.page-header {
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: white;
+  padding: 1rem;
+  margin: 0 0 1rem 0;
+  width: 100vw; /* Full viewport width */
+  position: relative;
+}
+
+.page-header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+/* Cards */
+.card {
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+}
+
+.card-header {
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #dee2e6;
+  border-radius: 12px 12px 0 0 !important;
+  font-weight: 600;
+}
+
+/* Buttons */
+.btn {
+  border-radius: 8px;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  border: none;
+}
+
+.btn-outline-primary {
+  border-color: #007bff;
+  color: #007bff;
+}
+
+.btn-outline-primary:hover {
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  border-color: #007bff;
+}
+
+/* Forms */
+.form-control {
+  border-radius: 8px;
+  border: 1px solid #dee2e6;
+  padding: 0.75rem;
+}
+
+.form-control:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* Auth Pages */
+.auth-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: linear-gradient(135deg, #007bff, #0056b3);
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 400px;
+  border: none;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.auth-header {
+  text-align: center;
+  padding: 2rem 1rem 1rem;
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: white;
+  border-radius: 16px 16px 0 0;
+}
+
+.auth-body {
+  padding: 2rem;
+}
+
+/* QR Code Page */
+.qr-container {
+  text-align: center;
+  padding: 2rem;
+}
+
+.qr-code {
+  background: white;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  display: inline-block;
+  margin: 1rem 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .page-header h1 {
+    font-size: 1.25rem;
+  }
+
+  .bottom-nav .nav-link {
+    padding: 10px 4px;
+    font-size: 0.7rem;
+  }
+
+  .bottom-nav .nav-icon {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .page-header {
+    padding: 0.75rem 1rem;
+  }
+
+  .page-header h1 {
+    font-size: 1.1rem;
+  }
+}
+
+/* Desktop and larger screens */
+@media (min-width: 769px) {
+  .bottom-nav .nav-link {
+    padding: 15px 8px;
+    font-size: 0.8rem;
+  }
+
+  .bottom-nav .nav-icon {
+    font-size: 1.3rem;
+  }
+}
+
+/* iOS DateTime Input Styles */
+.ios-datetime-container {
+  position: relative;
+}
+
+.ios-datetime-container input[type="datetime-local"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: #fff;
+  border: 1px solid #ced4da;
+  border-radius: 0.375rem;
+  padding: 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #495057;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.ios-datetime-container input[type="datetime-local"]:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  outline: none;
+}
+
+/* iOS Safari specific fixes */
+@supports (-webkit-touch-callout: none) {
+  .ios-datetime-container input[type="datetime-local"] {
+    padding: 0.75rem 0.75rem;
+    font-size: 16px; /* Prevents zoom on iOS */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23666' viewBox='0 0 16 16'%3E%3Cpath d='M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v1h14V3a1 1 0 0 0-1-1H2zm13 3H1v9a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V5z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 16px 16px;
+    padding-right: 2.5rem;
+  }
+
+  .ios-datetime-container small {
+    display: block;
+    margin-top: 0.25rem;
+    color: #6c757d;
+    font-size: 0.875rem;
+  }
+}
